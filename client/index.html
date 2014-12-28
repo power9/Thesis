@@ -3,21 +3,22 @@
 <head>
  <title>SceneIt</title>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/jquery/dist/jquery.onepage-scroll.min.js"></script>
-  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+  <!--<script src="bower_components/jquery/dist/jquery-scrollto.js"></script>-->
+  <!--<script src="bower_components/jquery/dist/jquery.onepage-scroll.min.js"></script>-->
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <script src="app/app.js"></script>
-  <script src="app/home/HomeController.js"></script>
-  <script src="app/map/MapController.js"></script>
+   <script src="app/app.js"></script>
+   <script src="app/home/HomeController.js"></script>
+   <script src="app/map/MapController.js"></script>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
   <!-- <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" /> -->
   <!-- <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css" /> -->
-  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css" />
-  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>
-  <link rel="stylesheet" type="text/css" href="/styles/onepage-scroll.css" />
-  <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+  <!-- <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css" /> -->
+  <!--<script src="http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>-->
+  <!-- <link rel="stylesheet" type="text/css" href="/styles/onepage-scroll.css" /> -->
+  <link rel="stylesheet" media="all" type="text/css" href="styles/styles.css" />
 </head>
 <body>
     <header class="main-header">
@@ -41,44 +42,67 @@
         </ul>
       </div>
 
-      <script>
-       $(document).ready(function () {
-          $(".main").onepage_scroll({
-           sectionContainer: "section",
-           easing: "ease",                  
-           animationTime: 1000,             
-           pagination: true,               
-           updateURL: false,               
-           beforeMove: function(index) {},  
-           afterMove: function(index) {},   
-           loop: false,                     
-           keyboard: true,                  
-           responsiveFallback: false,        
-           direction: "vertical"    
-          });
-
-          $('.menu-close-icon').click(function (e) {
-              e.preventDefault();
-              $('#side-menu').animate({ right: '-250px' });
-             
-          });
-          $('.menu-open-icon').click(function (e) {
-              e.preventDefault();
-              $('#side-menu').animate({right: '0px', top: '0px' });        
-          });
-        });
-      </script>
+      
     </header>
 
-     <div class="main">
-      <div class="section">
-       <div ui-view>
+    <div ui-view>
 
-
-       </div>
-     </div>
     </div>
+  <script>
+   $(document).ready(function () {
+      /*$(".main").onepage_scroll({
+       sectionContainer: "section",
+       easing: "ease",                  
+       animationTime: 1000,             
+       pagination: true,               
+       updateURL: false,               
+       beforeMove: function(index) {},  
+       afterMove: function(index) {},   
+       loop: false,                     
+       keyboard: true,                  
+       responsiveFallback: false,        
+       direction: "vertical"    
+      });*/
 
+      $('.menu-close-icon').click(function (e) {
+          e.preventDefault();
+          $('#side-menu').animate({ right: '-250px' });
+         
+      });
+      $('.menu-open-icon').click(function (e) {
+          e.preventDefault();
+          $('#side-menu').animate({right: '0px', top: '0px' });        
+      });
+    });
+  </script>
+  <script src="bower_components/angular/angular-parallax.js"></script>
+ 
+
+
+     <!-- <div class="main">
+      <section> 
+       <form class="centered">
+          <h1>Look anywhere. Anytime.</h1>
+          <div class="form-group has-feedback">
+            <input placeholder="San Francisco, CA" type="text" ng-enter="func()">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+          </div>
+       </form>
+      </section>
+
+      <section> 
+        <form class="centered">
+          <h1>Been there. Done that.</h1>
+          <div class="form-group has-feedback">
+            <input placeholder="Los Angeles, CA" type="text" ng-enter="func()">
+              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+       </form>
+      </section>
+    </div>
+ -->
 
 </body>
 </html>
+
+
